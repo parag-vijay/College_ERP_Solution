@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3307/studentdata</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hbm2ddl.auto">update</property>
+    <property name="hibernate.cache.use_second_level_cache">false</property>
+    <property name="hibernate.cache.use_query_cache">false</property>
+    <property name="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+    <mapping class="javap.Expectations"/>
+    <mapping class="javap.Placement1"/>
+    <mapping class="javap.Training_certificate"/>
+    <mapping class="javap.Joining"/>
+    <mapping class="javap.Student_record"/>
+    <mapping class="javap.Family"/>
+    <mapping class="javap.Acedemic_record"/>
+    <mapping class="javap.Admision_detail"/>
+    <mapping class="javap.Previous_qualification"/>
+    <mapping class="javap.Disciplinary_Action"/>
+    <mapping class="javap.Cocurricular_activity"/>
+    <mapping class="javap.Higher_study"/>
+    <mapping class="javap.Compitive_exam"/>
+    <mapping class="javap.Strength"/>
+    <mapping class="javap.UserName"/>
+    <mapping class="javap.TimeTable"/>
+  </session-factory>
+</hibernate-configuration>
