@@ -1,0 +1,63 @@
+<%@page import="javap.Convert"%>
+<%@page import="java.io.IOException" %>
+<%@page import="org.hibernate.cfg.AnnotationConfiguration"%>
+<%@page import="org.hibernate.SessionFactory"%>
+<%@page import="java.util.List"%>
+<%@page import="org.hibernate.criterion.Restrictions"%>
+<%@page import="org.hibernate.Criteria"%>
+<%@page import="org.hibernate.Transaction"%>
+<%@page import="org.hibernate.Session"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%> 
+ <!DOCTYPE html>
+ 
+
+<html>
+<head>
+<title> Expectation From Collage </title>
+</head>
+<body>
+    
+      
+    <%! public List lt;%>
+   
+  <% try {
+SessionFactory sf=new AnnotationConfiguration().configure().addAnnotatedClass(javap.UserName.class).buildSessionFactory();
+Session s=sf.openSession(); 
+Transaction tx=s.beginTransaction();
+Criteria c=s.createCriteria(javap.Expectations.class);
+c.add(Restrictions.eq("username","0827IT111058"));
+lt=c.list();
+tx.commit();
+s.close();
+  }
+catch(Exception e) {
+        System.out.println(e);
+         }
+ %>
+ 
+ 
+   
+<form action="Expectation1" method="post" >
+<table>
+<tr>
+<td><div align="left"><b>Expectation from College:</b></div></td>
+<td><textarea rows="5" cols="100"  maxlength="300" name="clg" id="clg1" value="<%=lt.get("2");%>"></textarea></td>
+</tr>
+<tr>
+<td><div align="left"><b> Expectation from Department:</b></div></td>
+<td><textarea rows="5" cols="100" maxlength="300" name="dpt" id="dpt1" value="<%=lt.get("2");%>"></textarea></td>
+</tr>
+<tr>
+<td><div align="left"><b>Expectation from Mentor:</b></div></td>
+<td><textarea rows="5" cols="100" maxlength="300" name="mnt" id="mnt1"></textarea></td>
+</tr>
+<tr>
+<td><div align="left"><b>Action Planed:</b></div></td>
+<td><textarea rows="5" cols="100" maxlength='300' name="act" id="act1" ></textarea></td>
+</tr>
+<tr><td><input type="submit"  value="Insert"></td></tr>
+</table>
+</form>
+</body>
+</html> 
+
